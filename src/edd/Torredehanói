@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        //primeira parte
+        int n = in.nextInt();
+        double resp = Math.pow(2, n)-1;
+        System.out.println(resp+" segundos");
+        System.out.println("");
+        //segunda parte
+        int[][] torre = new int[n][3];
+            for(int i = 0; i < torre.length; i++){
+                torre[0][i] = n;
+                n--;
+            }
+        imprimirMatriz(torre);
+    }
+    public static void imprimirMatriz(int[][] matriz){
+        for(int i = 0; i <matriz.length; i++){            
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print(matriz[j][i]+" ");
+            }
+        System.out.println("");
+        }
+    }
+}
