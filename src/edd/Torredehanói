@@ -12,12 +12,14 @@ public class main {
         System.out.println(resp+" segundos");
         System.out.println("");
         //segunda parte
-        int[][] torre = new int[n][3];
-            for(int i = 0; i < torre.length; i++){
-                torre[0][i] = n;
-                n--;
-            }
-        imprimirMatriz(torre);
+        //int[][] torre = new int[n][3];
+        //    for(int i = 0; i < torre.length; i++){
+        //        torre[0][i] = n;
+        //        n--;
+        //    }
+        //imprimirMatriz(torre);
+        
+        mov(n, 'A', 'C', 'B'); 
     }
     public static void imprimirMatriz(int[][] matriz){
         for(int i = 0; i <matriz.length; i++){            
@@ -25,6 +27,15 @@ public class main {
                 System.out.print(matriz[j][i]+" ");
             }
         System.out.println("");
+        }
+    }
+    public void mov(int disco, char origem, chat dest, char manobra){
+        if(disco == 1){
+            System.out.println("movimento disco"+disco+" de "+origem+" para "+destino);
+        }else{
+            mov(disco -1, origem, manobra, destino);
+            System.out.println("movimento disco "+disco+" de " +origem+" para "+destino);
+            mov(disco-1, manobra, destino, origem);
         }
     }
 }
